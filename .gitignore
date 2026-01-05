@@ -1,3 +1,24 @@
+# Keep only docs/ for GitHub Pages hosting
+# Everything else stays local
+
+# Python scripts and config
+*.py
+config.yaml
+episodes.yaml
+
+# Claude Code configuration
+.claude/
+
+# Agent files
+AGENTS.md
+@AGENTS.md
+
+# Beads issue tracking
+.beads/
+
+# Episode source files
+episodes/
+
 # Dependencies
 node_modules/
 venv/
@@ -26,6 +47,3 @@ Thumbs.db
 # Logs
 *.log
 logs/
-
-# Audio files (hosted on Dropbox, not GitHub)
-episodes/**/*.mp3
