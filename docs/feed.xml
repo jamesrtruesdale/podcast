@@ -4,8 +4,8 @@
     <title>My Lambda Podcast</title>
     <description>A curated collection of audio content.</description>
     <language>en-us</language>
-    <link>https://jamesrtruesdale.github.io/lambdapodcast</link>
-    <atom:link href="https://jamesrtruesdale.github.io/lambdapodcast/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://jamesrtruesdale.github.io/podcast</link>
+    <atom:link href="https://jamesrtruesdale.github.io/podcast/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Your Name</itunes:author>
     <itunes:summary>A curated collection of audio content.</itunes:summary>
     <itunes:explicit>no</itunes:explicit>
@@ -18,7 +18,7 @@
     <image>
       <url>https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1</url>
       <title>My Lambda Podcast</title>
-      <link>https://jamesrtruesdale.github.io/lambdapodcast</link>
+      <link>https://jamesrtruesdale.github.io/podcast</link>
     </image>
   </channel>
 </rss>
