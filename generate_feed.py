@@ -89,14 +89,29 @@ def format_duration(duration_str):
 def build_dropbox_url(base_url, folder, filename):
     """Build a direct Dropbox URL for a file in a shared folder.
 
-    Converts: https://www.dropbox.com/sh/abc123/def456?dl=1
-    To: https://dl.dropboxusercontent.com/sh/abc123/def456/folder/filename
+    Handles both old format (sh) and new format (scl/fo):
+    - Old: https://www.dropbox.com/sh/abc123/def456?dl=1
+    - New: https://www.dropbox.com/scl/fo/abc123/def456?rlkey=xxx&dl=1
     """
-    # Remove query params
-    base = base_url.split('?')[0]
-    # Convert to direct download domain
-    base = base.replace('www.dropbox.com', 'dl.dropboxusercontent.com')
-    return f"{base}/{folder}/{filename}"
+    from urllib.parse import urlparse, parse_qs, urlencode
+
+    parsed = urlparse(base_url)
+    query_params = parse_qs(parsed.query)
+
+    # Build path with subfolder and file
+    base_path = parsed.path.rstrip('/')
+    new_path = f"{base_path}/{folder}/{filename}"
+
+    # Keep rlkey if present, set dl=1
+    new_params = {}
+    if 'rlkey' in query_params:
+        new_params['rlkey'] = query_params['rlkey'][0]
+    new_params['dl'] = '1'
+
+    # Use direct download domain
+    host = 'dl.dropboxusercontent.com'
+
+    return f"https://{host}{new_path}?{urlencode(new_params)}"
 
 def generate_feed():
     """Generate the podcast RSS feed."""
