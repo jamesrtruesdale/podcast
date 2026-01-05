@@ -9,22 +9,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Self-hosted podcast generator. Combine MP3 files into episodes, generate cover art, and publish via RSS.
 
 **Architecture:**
-- MP3s + cover art hosted on Dropbox (shared folder)
-- RSS feed hosted on GitHub Pages (private repo)
+- MP3s + cover art hosted on Dropbox (direct file links)
+- RSS feed hosted on GitHub Pages (public repo)
 - Subscribe directly via URL in Apple Podcasts
+
+## Skills
+
+### /createepisode
+
+**Use this skill to create a new podcast episode.** It guides through the full workflow:
+1. Combine MP3 files
+2. Generate cover art
+3. Get Dropbox links
+4. Update feed and push
 
 ## Tech Stack
 
 - Python 3.x (stdlib only, no dependencies)
 - ffmpeg for audio combining
 - GitHub Pages for RSS hosting
-- Dropbox for media hosting
+- Dropbox for media hosting (direct file links)
 
 ## Build & Run
 
 ```bash
 # Build an episode (combines MP3s, updates feed)
-python build_episode.py <folder-name> --title "Episode Title" --description "..."
+python build_episode.py "<folder-name>" --title "Episode Title" --description "..."
 
 # Just regenerate the feed
 python generate_feed.py
@@ -38,36 +48,48 @@ python -c "import xml.etree.ElementTree as ET; ET.parse('docs/feed.xml'); print(
 ```
 lambdapodcast/
 ├── episodes/
-│   └── 01-episode-name/
+│   └── Episode Name/
 │       ├── part1.mp3, part2.mp3...  (raw files you drop in)
 │       ├── episode.mp3              (combined output)
 │       └── cover.jpg                (generated via /nano-b)
-├── config.yaml          # Podcast metadata + Dropbox base URL
-├── episodes.yaml        # Episode list (auto-updated by build script)
-├── build_episode.py     # Combine MP3s, update feed
+├── config.yaml          # Podcast metadata
+├── episodes.yaml        # Episode list with Dropbox URLs
+├── build_episode.py     # Combine MP3s
 ├── generate_feed.py     # Generate RSS from config
 └── docs/
     ├── feed.xml         # RSS feed (GitHub Pages serves this)
     └── robots.txt       # Block search indexing
 ```
 
-## Episode Workflow
+## Episode Workflow (Manual)
 
-1. Create folder: `mkdir episodes/01-my-episode`
+1. Create folder: `mkdir episodes/"Episode Name"`
 2. Drop MP3 files into the folder
-3. Build: `python build_episode.py 01-my-episode --title "My Episode"`
-4. Generate cover: `/nano-b` → save as `episodes/01-my-episode/cover.jpg`
-5. Copy episode folder to Dropbox podcast folder
-6. Commit and push to GitHub
+3. Build: `python build_episode.py "Episode Name" --title "Title" --description "..."`
+4. Generate cover: `/nano-b` → save as `episodes/Episode Name/cover.jpg`
+5. Copy episode folder to Dropbox
+6. Get direct share links for `episode.mp3` and `cover.jpg`
+7. Add `file_url` and `cover_url` to episodes.yaml
+8. `python generate_feed.py && git add -A && git commit -m "Add episode" && git push`
 
-## Dropbox Setup
+## Dropbox URL Format
 
-Share your podcast folder once, save the base URL in `config.yaml`:
-```yaml
-dropbox_base_url: "https://www.dropbox.com/sh/abc123/def456?dl=1"
+Dropbox share links must be converted to direct download URLs:
+
+```
+Share link:  https://www.dropbox.com/scl/fi/xxxxx/file.mp3?rlkey=yyy&st=zzz&dl=0
+Direct URL:  https://dl.dropboxusercontent.com/scl/fi/xxxxx/file.mp3?rlkey=yyy&dl=1
 ```
 
-Files are accessed via: `dl.dropboxusercontent.com/sh/abc123/def456/{folder}/episode.mp3`
+- Change `www.dropbox.com` → `dl.dropboxusercontent.com`
+- Remove `st=` parameter
+- Change `dl=0` → `dl=1`
+
+## Feed URL
+
+```
+https://jamesrtruesdale.github.io/podcast/feed.xml
+```
 
 ## Issue Tracking
 
