@@ -1,0 +1,16 @@
+# Episodes List
+# Add your episodes here, newest first
+
+# Example episode (delete or modify):
+- title: "Episode 1: Getting Started"
+  description: "Welcome to the podcast! In this first episode..."
+  file_url: "https://www.dropbox.com/s/xxxxx/episode01.mp3?dl=1"
+  pub_date: "2025-01-05"
+  duration: "15:30"  # Optional: MM:SS or HH:MM:SS
+
+# Add more episodes below:
+# - title: "Episode 2: Another Topic"
+#   description: "Description of episode 2..."
+#   file_url: "https://www.dropbox.com/s/xxxxx/episode02.mp3?dl=1"
+#   pub_date: "2025-01-12"
+#   duration: "22:45"

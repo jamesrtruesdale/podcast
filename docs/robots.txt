@@ -1,0 +1,3 @@
+# Block search engines from indexing this feed
+User-agent: *
+Disallow: /

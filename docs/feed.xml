@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>My Lambda Podcast</title>
+    <description>A curated collection of audio content.</description>
+    <language>en-us</language>
+    <link>https://yourusername.github.io/lambdapodcast</link>
+    <atom:link href="https://yourusername.github.io/lambdapodcast/feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:author>Your Name</itunes:author>
+    <itunes:summary>A curated collection of audio content.</itunes:summary>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>Your Name</itunes:name>
+      <itunes:email>your.email@example.com</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Society &amp; Culture" />
+    <itunes:image href="https://www.dropbox.com/s/xxxxx/cover.jpg?dl=1" />
+    <image>
+      <url>https://www.dropbox.com/s/xxxxx/cover.jpg?dl=1</url>
+      <title>My Lambda Podcast</title>
+      <link>https://yourusername.github.io/lambdapodcast</link>
+    </image>
+    <item>
+      <title>Episode 1: Getting Started</title>
+      <description>Welcome to the podcast! In this first episode...</description>
+      <itunes:summary>Welcome to the podcast! In this first episode...</itunes:summary>
+      <pubDate>Sun, 05 Jan 2025 12:00:00 +0000</pubDate>
+      <enclosure url="https://www.dropbox.com/s/xxxxx/episode01.mp3?dl=1" type="audio/mpeg" length="0" />
+      <itunes:duration>00:15:30</itunes:duration>
+      <guid isPermaLink="false">https://www.dropbox.com/s/xxxxx/episode01.mp3?dl=1</guid>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+# Podcast Configuration
+# Edit these values for your podcast
+
+title: "My Lambda Podcast"
+description: "A curated collection of audio content."
+author: "Your Name"
+email: "your.email@example.com"
+language: "en-us"
+category: "Society & Culture"  # See: https://podcasters.apple.com/support/1691-apple-podcasts-categories
+explicit: false
+
+# Cover art - must be square, 1400-3000px, JPG or PNG
+# Upload to Dropbox and use the direct link (?dl=1)
+cover_art_url: "https://www.dropbox.com/s/xxxxx/cover.jpg?dl=1"
+
+# Your GitHub Pages URL (will be set after deployment)
+# Format: https://USERNAME.github.io/REPONAME
+site_url: "https://yourusername.github.io/lambdapodcast"
+
+# Feed filename (obscure for privacy)
+feed_filename: "feed.xml"
