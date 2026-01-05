@@ -7,3 +7,9 @@
 #   description: "Welcome to the podcast"
 #   pub_date: "2025-01-05"
 #   duration: "15:30"
+
+- folder: "Episode 1 - Prime House"
+  title: "Episode 1: Prime House"
+  description: "Welcome to the Show"
+  pub_date: "2026-01-05"
+  duration: "01:59:12"

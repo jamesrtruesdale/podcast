@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
-    <title>My Lambda Podcast</title>
-    <description>A curated collection of audio content.</description>
+    <title>Lambda Podcast</title>
+    <description>Welcome to the Show</description>
     <language>en-us</language>
     <link>https://jamesrtruesdale.github.io/podcast</link>
     <atom:link href="https://jamesrtruesdale.github.io/podcast/feed.xml" rel="self" type="application/rss+xml" />
-    <itunes:author>Your Name</itunes:author>
-    <itunes:summary>A curated collection of audio content.</itunes:summary>
+    <itunes:author>Jimbo.T</itunes:author>
+    <itunes:summary>Welcome to the Show</itunes:summary>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
-      <itunes:name>Your Name</itunes:name>
+      <itunes:name>Jimbo.T</itunes:name>
       <itunes:email>your.email@example.com</itunes:email>
     </itunes:owner>
     <itunes:category text="Society &amp; Culture" />
     <itunes:image href="https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1" />
     <image>
       <url>https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1</url>
-      <title>My Lambda Podcast</title>
+      <title>Lambda Podcast</title>
       <link>https://jamesrtruesdale.github.io/podcast</link>
     </image>
+    <item>
+      <title>Episode 1: Prime House</title>
+      <description>Welcome to the Show</description>
+      <itunes:summary>Welcome to the Show</itunes:summary>
+      <itunes:image href="https://dl.dropboxusercontent.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg/Episode 1 - Prime House/cover.jpg?rlkey=3wcp9z365qu1c832odu0njrbd&amp;dl=1" />
+      <pubDate>Mon, 05 Jan 2026 12:00:00 +0000</pubDate>
+      <enclosure url="https://dl.dropboxusercontent.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg/Episode 1 - Prime House/episode.mp3?rlkey=3wcp9z365qu1c832odu0njrbd&amp;dl=1" type="audio/mpeg" length="0" />
+      <itunes:duration>01:59:12</itunes:duration>
+      <guid isPermaLink="false">https://dl.dropboxusercontent.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg/Episode 1 - Prime House/episode.mp3?rlkey=3wcp9z365qu1c832odu0njrbd&amp;dl=1</guid>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
   </channel>
 </rss>

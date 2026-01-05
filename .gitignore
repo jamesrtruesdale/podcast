@@ -26,3 +26,6 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Audio files (hosted on Dropbox, not GitHub)
+episodes/**/*.mp3
