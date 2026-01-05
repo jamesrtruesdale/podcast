@@ -15,6 +15,6 @@ cover_art_url: "https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1"
 # Dropbox shared folder base URL
 dropbox_base_url: "https://www.dropbox.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg?rlkey=5yu9ppqq5mr9cdtfd94wtd9pf&dl=1"
 
-# GitHub Pages URL (set after enabling Pages)
-site_url: "https://yourusername.github.io/lambdapodcast"
+# GitHub Pages URL
+site_url: "https://jamesrtruesdale.github.io/lambdapodcast"
 feed_filename: "feed.xml"
