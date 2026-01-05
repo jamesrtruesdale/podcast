@@ -9,8 +9,7 @@ category: "Society & Culture"
 explicit: false
 
 # Cover art for the main podcast (shown in podcast apps)
-# Upload to your Dropbox podcast folder, use direct link
-cover_art_url: "https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1"
+cover_art_url: "https://dl.dropboxusercontent.com/scl/fi/dimkv3fn7fq85idwmp8u4/cover.jpg?rlkey=sttxeyadamsoe3ku8ajkkzccp&dl=1"
 
 # Dropbox shared folder base URL
 dropbox_base_url: "https://www.dropbox.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg?rlkey=3wcp9z365qu1c832odu0njrbd&dl=1"

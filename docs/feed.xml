@@ -14,9 +14,9 @@
       <itunes:email>your.email@example.com</itunes:email>
     </itunes:owner>
     <itunes:category text="Society &amp; Culture" />
-    <itunes:image href="https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1" />
+    <itunes:image href="https://dl.dropboxusercontent.com/scl/fi/dimkv3fn7fq85idwmp8u4/cover.jpg?rlkey=sttxeyadamsoe3ku8ajkkzccp&amp;dl=1" />
     <image>
-      <url>https://www.dropbox.com/sh/xxxxx/cover.jpg?dl=1</url>
+      <url>https://dl.dropboxusercontent.com/scl/fi/dimkv3fn7fq85idwmp8u4/cover.jpg?rlkey=sttxeyadamsoe3ku8ajkkzccp&amp;dl=1</url>
       <title>Lambda Podcast</title>
       <link>https://jamesrtruesdale.github.io/podcast</link>
     </image>
@@ -24,11 +24,11 @@
       <title>Episode 1: Prime House</title>
       <description>Welcome to the Show</description>
       <itunes:summary>Welcome to the Show</itunes:summary>
-      <itunes:image href="https://dl.dropboxusercontent.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg/Episode 1 - Prime House/cover.jpg?rlkey=3wcp9z365qu1c832odu0njrbd&amp;dl=1" />
+      <itunes:image href="https://dl.dropboxusercontent.com/scl/fi/dimkv3fn7fq85idwmp8u4/cover.jpg?rlkey=sttxeyadamsoe3ku8ajkkzccp&amp;dl=1" />
       <pubDate>Mon, 05 Jan 2026 12:00:00 +0000</pubDate>
-      <enclosure url="https://dl.dropboxusercontent.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg/Episode 1 - Prime House/episode.mp3?rlkey=3wcp9z365qu1c832odu0njrbd&amp;dl=1" type="audio/mpeg" length="0" />
+      <enclosure url="https://dl.dropboxusercontent.com/scl/fi/pgfzpsahxmz3nedprllqu/episode.mp3?rlkey=ir90mtshhd5bhfa3150ipk0vm&amp;dl=1" type="audio/mpeg" length="0" />
       <itunes:duration>01:59:12</itunes:duration>
-      <guid isPermaLink="false">https://dl.dropboxusercontent.com/scl/fo/5eh1qm9jvjtxv03bpjx69/ALOOAAdBK1avAvibvpmggYg/Episode 1 - Prime House/episode.mp3?rlkey=3wcp9z365qu1c832odu0njrbd&amp;dl=1</guid>
+      <guid isPermaLink="false">https://dl.dropboxusercontent.com/scl/fi/pgfzpsahxmz3nedprllqu/episode.mp3?rlkey=ir90mtshhd5bhfa3150ipk0vm&amp;dl=1</guid>
       <itunes:explicit>no</itunes:explicit>
     </item>
   </channel>

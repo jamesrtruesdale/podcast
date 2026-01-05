@@ -173,18 +173,14 @@ def generate_feed():
         ET.SubElement(rss_image, 'title').text = config.get('title', 'My Podcast')
         ET.SubElement(rss_image, 'link').text = site_url
 
-    # Dropbox base URL for building file links
-    dropbox_base = config.get('dropbox_base_url', '')
-
     # Episodes
     for ep in episodes:
-        folder = ep.get('folder')
-        if not folder:
-            continue
+        # Use direct file URLs from episodes.yaml
+        file_url = ep.get('file_url')
+        episode_cover_url = ep.get('cover_url')
 
-        # Build URLs from Dropbox base + folder
-        file_url = build_dropbox_url(dropbox_base, folder, 'episode.mp3')
-        episode_cover_url = build_dropbox_url(dropbox_base, folder, 'cover.jpg')
+        if not file_url:
+            continue
 
         item = ET.SubElement(channel, 'item')
         ET.SubElement(item, 'title').text = ep.get('title', 'Untitled Episode')
