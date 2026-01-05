@@ -86,6 +86,18 @@ def format_duration(duration_str):
         return f"{parts[0].zfill(2)}:{parts[1].zfill(2)}:{parts[2].zfill(2)}"
     return duration_str
 
+def build_dropbox_url(base_url, folder, filename):
+    """Build a direct Dropbox URL for a file in a shared folder.
+
+    Converts: https://www.dropbox.com/sh/abc123/def456?dl=1
+    To: https://dl.dropboxusercontent.com/sh/abc123/def456/folder/filename
+    """
+    # Remove query params
+    base = base_url.split('?')[0]
+    # Convert to direct download domain
+    base = base.replace('www.dropbox.com', 'dl.dropboxusercontent.com')
+    return f"{base}/{folder}/{filename}"
+
 def generate_feed():
     """Generate the podcast RSS feed."""
     # Load config
@@ -146,15 +158,27 @@ def generate_feed():
         ET.SubElement(rss_image, 'title').text = config.get('title', 'My Podcast')
         ET.SubElement(rss_image, 'link').text = site_url
 
+    # Dropbox base URL for building file links
+    dropbox_base = config.get('dropbox_base_url', '')
+
     # Episodes
     for ep in episodes:
-        if not ep.get('file_url'):
+        folder = ep.get('folder')
+        if not folder:
             continue
+
+        # Build URLs from Dropbox base + folder
+        file_url = build_dropbox_url(dropbox_base, folder, 'episode.mp3')
+        episode_cover_url = build_dropbox_url(dropbox_base, folder, 'cover.jpg')
 
         item = ET.SubElement(channel, 'item')
         ET.SubElement(item, 'title').text = ep.get('title', 'Untitled Episode')
         ET.SubElement(item, 'description').text = ep.get('description', '')
         ET.SubElement(item, '{http://www.itunes.com/dtds/podcast-1.0.dtd}summary').text = ep.get('description', '')
+
+        # Episode-specific cover art
+        ep_image = ET.SubElement(item, '{http://www.itunes.com/dtds/podcast-1.0.dtd}image')
+        ep_image.set('href', episode_cover_url)
 
         # Pub date
         if ep.get('pub_date'):
@@ -162,7 +186,7 @@ def generate_feed():
 
         # Enclosure (the actual MP3)
         enclosure = ET.SubElement(item, 'enclosure')
-        enclosure.set('url', ep['file_url'])
+        enclosure.set('url', file_url)
         enclosure.set('type', 'audio/mpeg')
         enclosure.set('length', '0')  # Dropbox doesn't give us file size easily
 
@@ -174,7 +198,7 @@ def generate_feed():
         # GUID (unique identifier)
         guid = ET.SubElement(item, 'guid')
         guid.set('isPermaLink', 'false')
-        guid.text = ep['file_url']
+        guid.text = file_url
 
         # Explicit
         ET.SubElement(item, '{http://www.itunes.com/dtds/podcast-1.0.dtd}explicit').text = 'no'
